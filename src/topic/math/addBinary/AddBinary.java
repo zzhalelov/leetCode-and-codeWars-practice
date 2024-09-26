@@ -1,11 +1,15 @@
 package topic.math.addBinary;
 
+import java.math.BigInteger;
+
 public class AddBinary {
     public static String addBinary(String a, String b) {
-        Integer firstNumber = Integer.parseInt(a, 2);
-        Integer secondNumber = Integer.parseInt(b, 2);
-        int resultInt = firstNumber + secondNumber;
-        return Integer.toBinaryString(resultInt);
+        BigInteger firstNumber = new BigInteger(a, 2);
+        BigInteger secondNumber = new BigInteger(b, 2);
+
+        BigInteger result = firstNumber.add(secondNumber);
+
+        return result.toString(2);
     }
 
     public static void main(String[] args) {
