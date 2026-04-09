@@ -5,17 +5,9 @@ package leetCode.math.calculateDelayedArrivalTime;
 public class Solution {
     public int findDelayedArrivalTime(int arrivalTime, int delayedTime) {
         int delayedArrivalTime = arrivalTime + delayedTime;
-        if (delayedArrivalTime < 24) {
-            return delayedArrivalTime;
-        } else {
+        if (delayedArrivalTime >= 24) {
             delayedArrivalTime = (arrivalTime + delayedTime) - 24;
-            return delayedArrivalTime;
         }
-    }
-
-    public static void main(String[] args) {
-        Solution s1 = new Solution();
-        int result = s1.findDelayedArrivalTime(5, 3);
-        System.out.println(result);
+        return delayedArrivalTime;
     }
 }
